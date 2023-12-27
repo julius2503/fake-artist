@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+    <title>Fake Artist</title>
+</head>
+<body>
+    <header>
+        <a href="">
+            <h1>Fake Artist</h1>
+        </a>
+    </header>
+
+    <section id="players">
+        {% for user in users %}
+        <a href="/{{ user.id }}">
+        <div class="player">
+            <form action="" method="POST" name="deleteUser">
+                <p class="name">{{ user.name }}</p>
+                <input value="{{ user.id }}" name="usernameDelete">
+                <button type="submit" name="delete" class="delete">X</button>
+            </form>
+        </div>
+        </a>
+        {% endfor %}
+
+        <form id="addUser" action="" method="POST" name="addUser">
+            <input type="text" placeholder="Name" required maxlength="16" name="usernameAdd" autofocus autocomplete="off">
+            <button type="submit" name="add">+</button>
+        </form>
+
+        <form id="beginGame" action="" method="POST" name="beginGame">
+            <input type="text" name="beginGame">
+            <button>PLAY</button>
+        </form>
+   </section>
+
+    {% with msgs = get_flashed_messages() %}
+        {% if msgs %}
+            {% for msg in msgs %}
+                <script>
+                    window.alert("{{ msg }}");
+                </script>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+</body>
+</html>
