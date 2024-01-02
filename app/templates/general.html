@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/general.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/general.css') }}">
+    <title>Fake Artist</title>
+</head>
+<body>
+    <header>
+        <a href="">
+            <h1>Fake Artist</h1>
+        </a>
+        <h4>NAME ist der Gamemaster</h4>
+        <h2>Du bist ein wahrer Artist</h2>
+        <h3>gebe dein bestes um es den anderen zu beweisen</h3> 
+        <div>
+            <h3>Das Wort, das gezeichnet wird lautet:</h3>
+            <h2>WORT</h2>
+        </div>
+        <form action="" method="POST">
+            <input style="display: none;" name="newGame">
+            <button type="submit">Neues Spiel</button>
+        </form>
+        <form action="" method="POST">
+            <input style="display: none;" name="endGame">
+            <button type="submit">Spiel beenden</button>
+        </form>
+    </header>
+</body>
+</html>
